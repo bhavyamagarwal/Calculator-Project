@@ -1,22 +1,25 @@
-function appendToDisplay(value) {
-    document.getElementById("display").value += value;
-}
+<script>
+        let display = document.getElementById('display');
 
-function clearDisplay() {
-    document.getElementById("display").value = '';
-}
+        function appendToDisplay(value) {
+            display.value += value;
+        }
 
-function deleteLast() {
-    const display = document.getElementById("display").value;
-    document.getElementById("display").value = display.slice(0, -1);
-}
+        function clearDisplay() {
+            display.value = '';
+        }
 
-function calculate() {
-    const display = document.getElementById("display").value;
-    try {
-        const result = eval(display);
-        document.getElementById("display").value = result;
-    } catch (error) {
-        document.getElementById("display").value = 'Error';
-    }
-}
+        function calculate() {
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+        function backspace(){
+            display.value = display.value.slice(0, -1);
+        }
+
+    </script>
+</body>
+</html>
